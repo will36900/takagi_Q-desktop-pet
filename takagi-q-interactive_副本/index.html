@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Takagi Q Interactive Pet</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="pet-shell" aria-label="Takagi Q 互动桌宠">
+      <section class="stage" id="stage">
+        <div class="bubble" id="bubble" role="status" aria-live="polite">
+          今天也要让我陪你一会儿吗？
+        </div>
+
+        <button class="pet" id="pet" type="button" aria-label="点击 Takagi Q 互动">
+          <span class="sprite" id="sprite" aria-hidden="true"></span>
+        </button>
+
+        <section class="chat-panel is-hidden" id="chatPanel" aria-label="Takagi Q 对话">
+          <div class="chat-toolbar">
+            <span class="chat-title">Takagi_Q</span>
+            <button class="icon-button" id="keyButton" type="button" aria-label="设置 API key">Key</button>
+            <button class="icon-button" id="closeChatButton" type="button" aria-label="关闭对话">×</button>
+          </div>
+
+          <form class="chat-form" id="chatForm">
+            <input
+              class="chat-input"
+              id="chatInput"
+              type="text"
+              autocomplete="off"
+              placeholder="和 Takagi 说点什么..."
+              aria-label="输入消息"
+            />
+            <button class="send-button" id="sendButton" type="submit">发送</button>
+          </form>
+        </section>
+
+        <section class="key-panel is-hidden" id="keyPanel" aria-label="AI API key 设置">
+          <form class="key-card" id="keyForm">
+            <div class="provider-toggle" role="radiogroup" aria-label="选择 AI 服务">
+              <button class="provider-option is-active" id="openaiProviderButton" type="button" data-provider="openai" aria-pressed="true">
+                OpenAI
+              </button>
+              <button class="provider-option" id="deepseekProviderButton" type="button" data-provider="deepseek" aria-pressed="false">
+                DeepSeek
+              </button>
+            </div>
+            <label class="key-label" id="keyLabel" for="keyInput">OpenAI API key</label>
+            <input
+              class="key-input"
+              id="keyInput"
+              type="password"
+              autocomplete="off"
+              placeholder="sk-..."
+              aria-label="AI API key"
+            />
+            <p class="provider-status" id="providerStatus">当前使用 OpenAI。</p>
+            <div class="key-actions">
+              <button class="ghost-button" id="cancelKeyButton" type="button">取消</button>
+              <button class="save-button" type="submit">保存</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="reply-panel is-hidden" id="replyPanel" aria-label="Takagi Q 回复详情">
+          <button class="reply-close" id="closeReplyButton" type="button" aria-label="关闭回复详情">×</button>
+          <div class="reply-text" id="replyText"></div>
+        </section>
+      </section>
+
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
