@@ -1,0 +1,2 @@
+# takagi_Q-desktop-pet
+基于electron做的桌面宠物项目，做了可以接入deepseek和open ai两个key的版本，目前主要是适配mac，可以自主调用Safari搜索信息
