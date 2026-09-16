@@ -39,7 +39,7 @@
 npm install
 ```
 
-> 注意：发布到 GitHub 前，请确认 `package.json` 和 `package-lock.json` 已在项目根目录中。它们负责声明 Electron 入口和依赖，是别人 clone 后运行项目所必需的文件。
+请确认 `package.json` 和 `package-lock.json` 已在项目根目录中。它们负责声明 Electron 入口和依赖，是别人 clone 后运行项目所必需的文件。
 
 ## 启动
 
@@ -89,43 +89,7 @@ API key 会保存在 Electron 的本地用户数据目录，不应该提交到 G
 - 如果需要读取网页正文，Safari 可能还需要打开“允许来自 Apple 事件的 JavaScript”。
 - 这个功能只做打开 URL、搜索和读取当前网页内容，不会自动点击按钮、填写表单或读取密码。
 
-## 上传 GitHub 前注意
 
-建议保留：
-
-- `electron-main.js`
-- `electron-preload.js`
-- `app.js`
-- `index.html`
-- `styles.css`
-- `package.json`
-- `package-lock.json`
-- `petctl.command`
-- `start-desktop.command`
-- `Resources/`
-- `launchers/`
-- `legacy-launchers/`
-- `docs/`
-- `.gitignore`
-- `README.md`
-
-不要上传：
-
-- `node_modules/`
-- `.DS_Store`
-- `*.pid`
-- `*.log`
-- 任何 API key 或本地私密配置
-- 临时备份目录，例如只含 `.DS_Store` 的副本目录
-
-当前 `.gitignore` 已包含：
-
-```gitignore
-node_modules/
-.DS_Store
-*.log
-*.pid
-```
 
 ## 后续计划
 
